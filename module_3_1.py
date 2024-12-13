@@ -7,17 +7,13 @@ def count_calls():
 
 
 def string_info(string):
-    my_tuple = len(string), string.upper(), string.lower()
     count_calls()
-    return my_tuple
+    return len(string), string.upper(), string.lower()
 
 
 def is_contains(string, list_to_search):
-    new_list = []
-    for x in list_to_search:
-        new_list.append(x.lower())
     count_calls()
-    return string.lower() in new_list
+    return string.lower() in map(str.lower, list_to_search)
 
 
 calls = 0
