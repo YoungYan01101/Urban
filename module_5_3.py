@@ -28,7 +28,11 @@ class House:
     def __gt__(self, other): return self.number_of_floors > other_is_house(other)
     def __ge__(self, other): return self.number_of_floors >= other_is_house(other)
     def __ne__(self, other): return self.number_of_floors != other_is_house(other)
-    def __add__(self, value): return House(self.name, self.number_of_floors + other_is_house(value))
+
+    def __add__(self, value):
+        self.number_of_floors += other_is_house(value)
+        return self
+
     def __radd__(self, value): return self.__add__(value)
     def __iadd__(self, value): return self.__add__(value)
 
