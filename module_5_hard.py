@@ -96,7 +96,7 @@ class UrTube:
             return print('Войдите в аккаунт что бы смотреть видео!')
 
         if self.users[list(map(lambda x: x.nickname, self.users)).index(self.current_user)].age < 18:
-            return print('Вам нем 18 лет, пожалуйста покиньте страницу')
+            return print('Вам нет 18 лет, пожалуйста покиньте страницу')
 
         if title not in list(map(lambda x: x.title, self.videos)):
             return print('Видео не найдено, попробуйте ещё раз')
