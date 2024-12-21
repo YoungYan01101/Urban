@@ -61,7 +61,7 @@ class UrTube:
             if user.nickname == nickname:
                 return print(f'Пользователь {nickname} уже существует')
         h_password = hash(password)
-        UrTube.users.append(User(nickname, h_password, age))
+        self.users.append(User(nickname, h_password, age))
         print(f'Пользователь {nickname} успешно зарегестрирован')
         self.log_in(nickname, password)
 
