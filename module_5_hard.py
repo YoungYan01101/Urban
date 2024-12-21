@@ -4,6 +4,12 @@ from time import sleep
 
 
 class User:
+    """
+    Класс для создания объекта Пользователь с аттрибутами:
+    nickname - имя пользователя
+    password - захешированный пароль пользователя
+    age - возраст пользователя
+    """
     def __init__(self, nickname, password, age):
         self.nickname = nickname
         self.password = password
@@ -14,6 +20,13 @@ class User:
 
 
 class Video:
+    """
+    Класс для создания объекта Видео с аттрибутами:
+    title - название видео
+    duration - продолжительность видео
+    adult_mode - возрастное ограничение
+    time_now - время, на котором приостановился просмотр
+    """
     def __init__(self, title, duration, *, adult_mode=False):
         self.title = title
         self.duration = duration
@@ -25,6 +38,10 @@ class Video:
 
 
 class UrTube:
+    """
+    Класс, который управляет логикой работы сервиса UrbanTube с аттрибутом
+    current_user - текущий пользователь
+    """
     users = []
     videos = []
 
