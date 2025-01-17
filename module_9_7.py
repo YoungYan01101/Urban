@@ -9,7 +9,11 @@ def is_prime(func):
     def wrapper(*args):
         summ = func(*args)
         simple = True
-        if summ == 2:
+
+        if summ < 2:
+            print("Не является простым или составным")
+            return summ
+        elif summ == 2:
             pass
         elif summ % 2 == 0:
             simple = False
@@ -17,6 +21,7 @@ def is_prime(func):
             for i in range(3, int(sqrt(summ))+1, 2):
                 if summ % i == 0:
                     simple = False
+
         if simple:
             print('Простое')
         else:
@@ -30,5 +35,5 @@ def sum_three(*args):
     return sum(args)
 
 
-result = sum_three(2, 3, 6)
+result = sum_three(3, 0, 0)
 print(result)
